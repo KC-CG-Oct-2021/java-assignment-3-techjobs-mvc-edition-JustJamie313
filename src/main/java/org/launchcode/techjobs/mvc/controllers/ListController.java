@@ -27,7 +27,7 @@ public class ListController {
         columnChoices.put("employer", "Employer");
         columnChoices.put("location", "Location");
         columnChoices.put("positionType", "Position Type");
-        columnChoices.put("coreCompetency", "Skill");
+        columnChoices.put("coreCompetency", "Core Competency");
 
         tableChoices.put("all","View All");
         tableChoices.put("employer", JobData.getAllEmployers());
