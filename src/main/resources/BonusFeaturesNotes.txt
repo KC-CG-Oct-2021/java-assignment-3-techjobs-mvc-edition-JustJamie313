@@ -1,0 +1,8 @@
+Search Feature can handle unselected radio button - defaults to search all
+Search Feature can handle empty search string - defaults to ViewAll
+Search Results indicates # of jobs found matching criteria
+
+List Results indicates # of jobs found matching criteria
+
+List-Jobs table for both Search and List results highlights 'active' job (hovering over table)
+List-Jobs table table-rows for both Search and List Results highlights the 'active' row (hovering over row)

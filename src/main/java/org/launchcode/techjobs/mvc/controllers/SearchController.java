@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
+import static java.util.Objects.isNull;
 import static org.launchcode.techjobs.mvc.controllers.ListController.columnChoices;
 
 
@@ -28,16 +29,16 @@ public class SearchController extends TechJobsController{
     }
 
     @PostMapping(value = "results")
-    public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm){
+    public String displaySearchResults(Model model, @RequestParam(required = false) String searchType, @RequestParam String searchTerm){
         ArrayList<Job> jobs = new ArrayList<>();
-        if(searchTerm == "all"){
+        if(searchTerm == "all" || isNull(searchTerm)){
             jobs = JobData.findAll();
         } else {
+            if(isNull(searchType))searchType="all";
             jobs = JobData.findByColumnAndValue(searchType,searchTerm);
         }
-        model.addAttribute("columns", columnChoices);
         model.addAttribute("jobs",jobs);
-        model.addAttribute("title", "Jobs with " + columnChoices.get(searchType) + ": " + searchTerm);
+        model.addAttribute("title", jobs.size() + " Jobs with " + columnChoices.get(searchType) + ": " + searchTerm);
         model.addAttribute("previousSearchType",searchType);
         return "search";
     }

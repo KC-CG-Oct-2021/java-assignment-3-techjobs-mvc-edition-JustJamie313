@@ -14,9 +14,7 @@ td {
     vertical-align: top;
 }
 
-tr:nth-child(odd) {
-    background-color: #e4e4e4;
-}
+
 
 .centeredTable {
     margin-left: auto;
@@ -25,7 +23,7 @@ tr:nth-child(odd) {
 
 table.job-listing {
     margin: 30px auto;
-    border: 1px solid #e4e4e4;
+    border: 1px solid black;
     width: 80%;
 }
 
@@ -35,6 +33,18 @@ table.job-listing td:first-child {
 
 table.job-listing td:last-child {
     width: 80%;
+}
+tr:nth-child(odd) {
+    background-color: #e4e4e4;
+}
+table:hover tr:nth-child(odd){
+    background-color: paleturquoise;
+}
+table:hover tr:nth-child(n):hover{
+    background-color: lavenderblush;
+}
+table:hover{
+    background-color: azure;
 }
 
 label {

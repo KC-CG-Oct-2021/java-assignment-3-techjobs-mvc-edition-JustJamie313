@@ -47,7 +47,7 @@ public class ListController extends TechJobsController{
             model.addAttribute("title", "All Jobs");
         } else {
             jobs = JobData.findByColumnAndValue(column, value);
-            model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+            model.addAttribute("title", jobs.size() + " Jobs with " + columnChoices.get(column) + ": " + value);
         }
         model.addAttribute("jobs", jobs);
 
